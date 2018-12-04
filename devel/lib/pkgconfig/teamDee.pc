@@ -1,0 +1,8 @@
+prefix=/home/stephen/finalProject/devel
+
+Name: teamDee
+Description: Description of teamDee
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/stephen/finalProject/devel/lib 
+Requires: 

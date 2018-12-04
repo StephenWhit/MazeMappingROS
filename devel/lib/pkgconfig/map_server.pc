@@ -1,0 +1,8 @@
+prefix=/home/stephen/finalProject/devel
+
+Name: map_server
+Description: Description of map_server
+Version: 1.16.2
+Cflags: -I/home/stephen/finalProject/src/navigation/map_server/include
+Libs: -L/home/stephen/finalProject/devel/lib -lmap_server_image_loader
+Requires: roscpp nav_msgs tf2

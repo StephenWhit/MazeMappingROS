@@ -1,0 +1,8 @@
+prefix=/home/stephen/finalProject/install
+
+Name: spain_a3
+Description: Description of spain_a3
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/stephen/finalProject/install/lib 
+Requires: 

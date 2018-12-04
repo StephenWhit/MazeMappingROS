@@ -1,0 +1,12 @@
+<launch>
+
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch">
+  </include>
+
+  <include file="$(find hector_slam_launch)/launch/tutorial.launch">
+  </include>
+
+  <!-- scan transform -->
+  <!--node pkg="tf" type="static_transform_publisher" name="laser_frame" args="0.206 0 0.16 0 0 0 1 base_link laser 100"/>
+
+</launch>
