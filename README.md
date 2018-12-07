@@ -1,15 +1,40 @@
 # MazeMappingROS
 
-The goal for this project was to create an autonomous mobile robot that can map a certain distance in space using its laser scanner. To accomplish this we used a variety of algorithms such as: Hector Slam, A*, RRT, and self made motion planning. Using a combination of these algorithms we would be able to map a certain area while avoiding obstacles.
+Team D
+Autonomous Mapping
 
-Our implementation for autonomous mapping started with collecting the scan data from the Hokuyo laser range finder. The data the hokuyo sensor will give us data that can be used for both our Hector slam and our self made motion planning. After the data is passed through the hector slam algorithm, we should have a map of the surrounding area. 
+Shan Qamruddin, Hiren Patel, Stephen Whitcomb, Kyle Jackson 
+7th December, 2018
+Project Report
 
-Now that the robot knows its surrounding area we can use either A* or RRT to determine a path for the robot to take. Because RRT is a branching algorithm we will run the algorithm and then decide our goal. If A* is desired to be implemented we will need to first decide on a goal for the robot to reach. A* will then path the best route to the desired goal. Our goal for both RRT and A* initially is the farthest distanced sensed but the closest mapped. In other words we will chose the farthest scan distance as our threshold and then determine which threshold point in the map we want to reach depending on how far it is from the robot. This will prevent the robot from backtracking over and over again creating a yo yo effect. 
-
-Once the robot successfully moves to that location it attempts another scan of the environment. Again the robot depending on the algorithm implemented, will attempt to move to a new goal and repeat this entire process. Once the robot does not have any more max thresholds to set as goals for RRT or A* then the entire map should be complete. 
+The goal for this project was to create an autonomous mobile robot that can map a certain distance in space using its laser scanner. To accomplish this we could have used a variety of algorithms such as Hector Slam, A*, RRT, or a self-made path-planning. Using a combination of these algorithms we would be able to map a certain area while avoiding obstacles.
+Our implementation for autonomous mapping started with collecting the scan data from the Hokuyo laser range finder. The data the hokuyo sensor will give us data that can be used for both our Hector slam and our chosen path-planning algorithm. After the data is passed through the Hector Slam algorithm, we should have a map of the immediate area.  Then the robot will move to another position and repeat this process until the goal area is totally mapped. 
+Now that the robot knows its surrounding area we can use any path-planning algorithm to determine a path for the robot to take. We chose the Rapidly Exploring Random Tree (RRT) algorithm as it is designed to efficiently search nonconvex, high-dimensional spaces by randomly building a space-filling tree. Running RRT will provide the best path to our next goal position. Our goal position initially is the farthest distanced sensed but the closest mapped. In other words, we will choose the farthest scan distance as our threshold and then determine which threshold point in the map we want to reach depending on how far it is from the robot. This will prevent the robot from backtracking repeatedly.  
+Conceptually, we understood what the project entailed.  However, we were unable to get this to work properly due to several issues.  One issue was the fact that we needed an obstacle list (python list) for path-planning and we did not know how to generate this. Another issue was that we had trouble figuring out how to incorporate the laser scan data into the RRT algorithm.  
 
 Contributions: 
-Kyle:
-Stephen:
-Hiren:
-Shan Qamruddin: 
+Shan Qamruddin: Focused on the overall path planning algorithm. Preventing yoyoing (aka. Back tracking) of the robot. I also spent a considerable amount of time on trying to get RRT and A* implemented by myself and with the group. 
+Hiren Patel: researched path-planning, hokuyo laser scanner/turtlebot and how to use them in ROS
+Stephen Whitcomb: path-planning and SLAM algorithms, wrote the code attempts
+Kyle Jackson: researched path-planning and SLAM algorithms, wrote the code attempts, paper
+
+
+Link: https://docs.google.com/document/d/1UDRxcJ9h99YQfEMaOIwnOqjR2RhLgJlVQ0RetpeOc3g/edit#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
